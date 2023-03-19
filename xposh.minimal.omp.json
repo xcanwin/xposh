@@ -1,0 +1,67 @@
+{
+  "$schema": "",
+  "blocks": [
+    {
+      "alignment": "left",
+      "newline": true,
+      "segments": [
+        {
+          "background": "#C0392B",
+          "foreground": "#eeeeee",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": "\u250c {{ .UserName }}@{{ .HostName }} ",
+          "type": "session"
+        },
+        {
+          "background": "#B7950B",
+          "foreground": "#ffffff",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": " {{ if .Env.ShellName }}{{ .Env.ShellName }}{{ else }}{{ .Shell }}{{ end }} ",
+          "type": "os"
+        },
+        {
+          "background": "#83769c",
+          "foreground": "#ffffff",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "plain",
+          "template": " {{ .FormattedMs }} \n",
+          "type": "executiontime"
+        },
+        {
+          "background": "#0095e9",
+          "foreground": "#ffffff",
+          "powerline_symbol": "",
+          "properties": {
+            "home_icon": "~",
+            "style": "full"
+          },
+          "style": "powerline",
+          "template": "\u2514 {{ .Path }} ",
+          "type": "path"
+        },
+        {
+          "background": "#10a57b",
+          "background_templates": [
+            "{{ if gt .Code 0 }}#ff0044{{ end }}"
+          ],
+          "foreground": "#ffffff",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "diamond",
+          "template": " {{ if .Root }}{{ if eq .Code 0 }}#{{ else }}<s>#</s>{{ end }}{{ else }}{{ if eq .Code 0 }}${{ else }}<s>$</s>{{ end }}{{ end }} ",
+          "trailing_diamond": "",
+          "type": "exit"
+        }
+      ],
+      "type": "prompt"
+    }
+  ],
+  "console_title_template": "{{.PWD}}",
+  "final_space": true,
+  "version": 2
+}
