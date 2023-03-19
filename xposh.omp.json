@@ -3,25 +3,52 @@
   "blocks": [
     {
       "alignment": "left",
+      "newline": true,
       "segments": [
         {
-          "background": "#e2c44d",
-          "foreground": "#000000",
-          "leading_diamond": "<b>\ue0b6</b>",
+          "background": "#F39C12",
+          "foreground": "#ffffff",
+          "leading_diamond": "",
           "style": "diamond",
-          "template": " {{ .Icon }} {{ if .Env.ShellName }}{{ .Env.ShellName }}{{ else }}{{ .Shell }}{{ end }} ",
+          "template": "{{ if matchP \"bash|zsh\" .Shell }}<parentBackground>\ue0b0</> {{ .Icon }} {{ .UserName }}@{{ .HostName }} {{ end }}",
           "type": "os"
+        },
+        {
+          "background": "#E74C3C",
+          "foreground": "#ffffff",
+          "leading_diamond": "",
+          "style": "diamond",
+          "template": "<parentBackground>\ue0b0</> \uFCB5 {{ if .Env.ShellName }}{{ .Env.ShellName }}{{ else }}{{ .Shell }}{{ end }} ",
+          "type": "session"
+        },
+        {
+          "background": "#9B59B6",
+          "foreground": "#ffffff",
+          "leading_diamond": "",
+          "properties": {
+            "always_enabled": true
+          },
+          "style": "diamond",
+          "template": "<parentBackground>\ue0b0</> \uF072 {{ .FormattedMs }} ",
+          "trailing_diamond": "<b>\ue0b0</b>",
+          "type": "executiontime"
+        },
+        {
+          "style": "plain",
+          "template": "\n",
+          "type": "text"
         },
         {
           "background": "#0095e9",
           "foreground": "#ffffff",
+          "leading_diamond": "",
           "powerline_symbol": "\ue0b0",
           "properties": {
             "home_icon": "~",
             "style": "full"
           },
-          "style": "powerline",
-          "template": " \uF07C {{ .Path }} ",
+          "style": "diamond",
+          "template": "<parentBackground>\ue0b0</> \uF07C {{ if eq .OS \"windows\" }}{{ .Path }}{{ else }}{{ replaceP \"\\\\$\" .Path \"\\\\$\" }}{{ end }} ",
           "type": "path"
         },
         {
@@ -32,9 +59,8 @@
             "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
             "{{ if gt .Behind 0 }}#B388FF{{ end }}"
           ],
+          "leading_diamond": "",
           "foreground": "#ffffff",
-          "leading_diamond": "\ue0b6",
-          "powerline_symbol": "\ue0b0",
           "properties": {
             "branch_max_length": 25,
             "fetch_stash_count": true,
@@ -42,23 +68,12 @@
             "branch_icon": "\uE0A0 ",
             "branch_identical_icon": "\u25CF"
           },
-          "style": "powerline",
-          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
-          "trailing_diamond": "\ue0b4",
+          "style": "diamond",
+          "template": "<parentBackground>\ue0b0</> {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
           "type": "git"
         },
         {
-          "background": "#83769c",
-          "foreground": "#ffffff",
-          "properties": {
-            "always_enabled": true
-          },
-          "style": "plain",
-          "template": "<transparent>\ue0b0</> \uF072 {{ .FormattedMs }} ",
-          "type": "executiontime"
-        },
-        {
-          "background": "#10a57b",
+          "background": "#2ECC71",
           "background_templates": [
             "{{ if gt .Code 0 }}#ff0044{{ end }}"
           ],
@@ -68,7 +83,7 @@
           },
           "style": "diamond",
           "template": "<parentBackground>\ue0b0</> {{ if .Root }}{{ if eq .Code 0 }}\uF292{{ else }}\uF198{{ end }}{{ else }}{{ if eq .Code 0 }}\uf0e7{{ else }}\uE315{{ end }}{{ end }} ",
-          "trailing_diamond": "<b>\ue0b4</b>",
+          "trailing_diamond": "<b>\ue0b0</b>",
           "type": "exit"
         }
       ],

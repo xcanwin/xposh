@@ -42,4 +42,8 @@ if ! [[ -x "${POSH_PATH}" ]]; then
 	POSH_PATH=/usr/local/opt/oh-my-posh
 fi
 export ShellName=$(basename $SHELL)
-eval "$(oh-my-posh init "${ShellName}" --config "${POSH_PATH}/themes/xposh${xposh_min}.omp.json" | sed 's/-v MC_SID/"$MC_SID" != ""/g')"
+eval "$(\
+    oh-my-posh init "${ShellName}" --config "${POSH_PATH}/themes/xposh${xposh_min}.omp.json" |\
+    sed 's/-v MC_SID/"$MC_SID" != ""/g' |\
+    sed '/oh-my-posh print primary --config/s/)"$/        |sed '"'"'s\/\$(\/\\\\\\\$(\/g'"'"'        )"/g'
+)"
