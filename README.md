@@ -13,8 +13,8 @@
 - 科学的展示
 - 美观的色调
 - 顺手修复官方BUG
-- 兼容这些系统：Windows、MasOS、Linux
-- 兼容这些终端：Windows Terminal、CMD、Powershell、MSYS、iTerm、Termius、GNOME、VS Code
+- 兼容这些系统：Windows、MasOS、LinuxMint、Ubuntu
+- 兼容这些终端：Windows Terminal、CMD、Powershell、MSYS、iTerm、Termius、GNOME、VS Code、Tilix
 - 兼容这些命令处理器：Powershell、bash、zsh
 - 兼容以上所有系统、终端、命令处理器的各种混搭
 - 兼容powershell5和powershell7的语法，共用一个powershell脚本，方便统一维护和二开
@@ -34,6 +34,8 @@
 | Windows | CMD | Powershell | <img src="./assets/Windows-CMD-Powershell.png" width="750"> |
 | Windows | MSYS | bash | <img src="./assets/Windows-MSYS-bash.png" width="750"> |
 | Windows | Windows Terminal + MSYS | bash | <img src="./assets/Windows-Windows Terminal-MSYS-bash.png" width="750"> |
+| Windows | wsl + Ubuntu + Tilix | bash | <img src="./assets/Windows-wsl-Ubuntu-Tilix-bash.png" width="750"> |
+| Windows | Windows Terminal + Ubuntu | bash | <img src="./assets/Windows-Windows Terminal-Ubuntu-bash.png" width="750"> |
 | MacOS | iTerm | zsh | <img src="./assets/MacOS-iTerm-zsh.png" width="750"> |
 | MacOS | Termius | zsh | <img src="./assets/MacOS-Termius-zsh.png" width="750"> |
 | MacOS | VS Code | zsh | <img src="./assets/MacOS-VS Code-zsh.png" width="750"> |
