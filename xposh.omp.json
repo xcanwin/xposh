@@ -15,7 +15,7 @@
           },
           "template": "{{ if matchP \"bash|zsh\" .Shell }} {{ .Icon }} {{ .UserName }}@{{ .HostName }} {{ end }}",
           "foreground": "#ffffff",
-          "background": "#F39C12"
+          "background": "#D99B0E"
         },
         {
           "type": "session",
@@ -29,6 +29,18 @@
           "background": "#E74C3C"
         },
         {
+          "type": "python",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
+          "foreground": "#ffffff",
+          "background": "#00c6c6",
+          "properties": {
+            "cache_duration": "none",
+            "folder_name_fallback": false
+          }
+        },
+        {
           "type": "executiontime",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
@@ -38,13 +50,10 @@
           },
           "template": " \uf072 {{ .FormattedMs }} ",
           "foreground": "#ffffff",
-          "background": "#9B59B6"
+          "background": "#AC61CC"
         },
         {
           "type": "text",
-          "properties": {
-            "cache_duration": "none"
-          },
           "template": "\n",
           "style": "plain"
         },
@@ -65,14 +74,6 @@
           "type": "git",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
-          "properties": {
-            "cache_duration": "none",
-            "branch_icon": "\ue0a0 ",
-            "branch_identical_icon": "\u25cf",
-            "branch_max_length": 25,
-            "fetch_stash_count": true,
-            "fetch_status": true
-          },
           "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
           "foreground": "#ffffff",
           "background": "#f8677b",
@@ -81,15 +82,15 @@
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
             "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
             "{{ if gt .Behind 0 }}#B388FF{{ end }}"
-          ]
-        },
-        {
-          "type": "python",
-          "style": "powerline",
-          "powerline_symbol": "\ue0b0",
-          "template": " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
-          "foreground": "#ffffff",
-          "background": "#906cff"
+          ],
+          "properties": {
+            "cache_duration": "none",
+            "branch_icon": "\ue0a0 ",
+            "branch_identical_icon": "\u25cf",
+            "branch_max_length": 25,
+            "fetch_stash_count": true,
+            "fetch_status": true
+          }
         },
         {
           "type": "exit",
@@ -101,7 +102,7 @@
           },
           "template": " {{ if .Root }}{{ if eq .Code 0 }}\uf292{{ else }}\uf198{{ end }}{{ else }}{{ if eq .Code 0 }}\uf0e7{{ else }}\ue315{{ end }}{{ end }} ",
           "foreground": "#ffffff",
-          "background": "#2ECC71",
+          "background": "#28B764",
           "background_templates": [
             "{{ if gt .Code 0 }}#ff0044{{ end }}"
           ]
