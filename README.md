@@ -72,7 +72,7 @@
 
 ### MacOS + MacOS Terminal
 1. 从 ```https://github.com/JanDeDobbeleer/oh-my-posh/releases``` 下载 ```posh-darwin-amd64``` 和 ```themes.zip```
-2. 把主程序 ```posh-darwin-amd64``` 改名为 ```oh-my-posh``` 并保存在目录 ```/usr/local/opt/oh-my-posh/```
+2. 把主程序 ```posh-darwin-amd64``` 改名为 ```oh-my-posh``` 并保存在目录 ```/usr/local/bin/```，或者通过brew安装 ```brew install oh-my-posh```
 3. 把官方主题文件 ```themes.zip``` 解压在目录 ```/usr/local/opt/oh-my-posh/themes/```
 4. 把本项目中的主题文件 ```xposh.omp.json``` 和 ```xposh.minimal.omp.json``` 保存在目录 ```/usr/local/opt/oh-my-posh/themes/```
 5. 复制 ```.bashrc``` 里的内容
