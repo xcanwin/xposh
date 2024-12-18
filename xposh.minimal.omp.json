@@ -1,96 +1,115 @@
 {
-  "$schema": "",
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "console_title_template": "{{ .PWD }}",
   "blocks": [
     {
+      "type": "prompt",
       "alignment": "left",
-      "newline": true,
       "segments": [
         {
-          "background": "#F39C12",
-          "foreground": "#ffffff",
-          "leading_diamond": "",
-          "style": "diamond",
-          "template": "\u250c {{ if matchP \"bash|zsh\" .Shell }} {{ .UserName }}@{{ .HostName }} {{ end }}",
-          "type": "os"
-        },
-        {
-          "background": "#E74C3C",
-          "foreground": "#ffffff",
-          "leading_diamond": "",
-          "style": "diamond",
-          "template": " {{ if .Env.ShellName }}{{ .Env.ShellName }}{{ else }}{{ .Shell }}{{ end }} ",
-          "type": "session"
-        },
-        {
-          "background": "#9B59B6",
-          "foreground": "#ffffff",
-          "leading_diamond": "",
-          "properties": {
-            "always_enabled": true
-          },
-          "style": "plain",
-          "template": " {{ .FormattedMs }} ",
-          "trailing_diamond": "",
-          "type": "executiontime"
-        },
-        {
-          "style": "plain",
-          "template": "\n",
-          "type": "text"
-        },
-        {
-          "background": "#0095e9",
-          "foreground": "#ffffff",
-          "leading_diamond": "",
+          "type": "os",
+          "style": "powerline",
           "powerline_symbol": "",
           "properties": {
+            "cache_duration": "none"
+          },
+          "template": "\u250c {{ if matchP \"bash|zsh\" .Shell }} {{ .UserName }}@{{ .HostName }} {{ end }}",
+          "foreground": "#ffffff",
+          "background": "#F39C12"
+        },
+        {
+          "type": "session",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " {{ if .Env.ShellName }}{{ .Env.ShellName }}{{ else }}{{ .Shell }}{{ end }} ",
+          "foreground": "#ffffff",
+          "background": "#E74C3C"
+        },
+        {
+          "type": "executiontime",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "properties": {
+            "cache_duration": "none",
+            "always_enabled": true
+          },
+          "template": " {{ .FormattedMs }} ",
+          "foreground": "#ffffff",
+          "background": "#9B59B6"
+        },
+        {
+          "type": "text",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": "\n",
+          "style": "plain"
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "properties": {
+            "cache_duration": "none",
             "home_icon": "~",
             "style": "full"
           },
-          "style": "powerline",
           "template": "\u2514  {{ if eq .OS \"windows\" }}{{ .Path }}{{ else }}{{ replaceP \"\\\\$\" .Path \"\\\\$\" }}{{ end }} ",
-          "type": "path"
+          "foreground": "#ffffff",
+          "background": "#0095e9"
         },
         {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "properties": {
+            "cache_duration": "none",
+            "branch_icon": "\ue0a0 ",
+            "branch_identical_icon": "\u25cf",
+            "branch_max_length": 25,
+            "fetch_stash_count": true,
+            "fetch_status": true
+          },
+          "template": " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \uf692 {{ .StashCount }}{{ end }} ",
+          "foreground": "#ffffff",
           "background": "#f8677b",
           "background_templates": [
             "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}",
             "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}",
             "{{ if gt .Ahead 0 }}#B388FF{{ end }}",
             "{{ if gt .Behind 0 }}#B388FF{{ end }}"
-          ],
-          "leading_diamond": "",
-          "foreground": "#ffffff",
-          "properties": {
-            "branch_max_length": 25,
-            "fetch_stash_count": true,
-            "fetch_status": true,
-            "branch_icon": " ",
-            "branch_identical_icon": ""
-          },
-          "style": "diamond",
-          "template": "{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}  {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ",
-          "type": "git"
+          ]
         },
         {
+          "type": "python",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
+          "foreground": "#ffffff",
+          "background": "#906cff"
+        },
+        {
+          "type": "exit",
+          "style": "powerline",
+          "powerline_symbol": "",
+          "properties": {
+            "cache_duration": "none",
+            "always_enabled": true
+          },
+          "template": " {{ if .Root }}{{ if eq .Code 0 }}#{{ else }}<s>#</s>{{ end }}{{ else }}{{ if eq .Code 0 }}${{ else }}<s>$</s>{{ end }}{{ end }} ",
+          "foreground": "#ffffff",
           "background": "#2ECC71",
           "background_templates": [
             "{{ if gt .Code 0 }}#ff0044{{ end }}"
-          ],
-          "foreground": "#ffffff",
-          "properties": {
-            "always_enabled": true
-          },
-          "style": "diamond",
-          "template": " {{ if .Root }}{{ if eq .Code 0 }}#{{ else }}<s>#</s>{{ end }}{{ else }}{{ if eq .Code 0 }}${{ else }}<s>$</s>{{ end }}{{ end }} ",
-          "trailing_diamond": "",
-          "type": "exit"
+          ]
         }
       ],
-      "type": "prompt"
+      "newline": true
     }
   ],
-  "console_title_template": "{{ .PWD }}",
-  "final_space": true,
-  "version": 2
+  "version": 3,
+  "final_space": true
 }
