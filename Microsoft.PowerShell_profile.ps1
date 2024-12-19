@@ -28,4 +28,4 @@ if ($xposh_terms -notcontains $current_terminal) {
     $xposh_min=".minimal";
 }
 $env:ShellName=(Get-Process -pid $pid).Name
-& "${env:POSH_PATH}\bin\oh-my-posh" init pwsh --config "${env:POSH_PATH}\themes\xposh${xposh_min}.omp.json" | iex;
+& "${env:POSH_PATH}\oh-my-posh" init pwsh --config "${env:POSH_PATH}\themes\xposh${xposh_min}.omp.json" | iex;
