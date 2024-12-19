@@ -24,7 +24,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": " \ufcb5 {{ if .Env.ShellName }}{{ .Env.ShellName }}{{ else }}{{ .Shell }}{{ end }} ",
+          "template": " \udb81\udfb7 {{ if .Env.ShellName }}{{ .Env.ShellName }}{{ else }}{{ .Shell }}{{ end }} ",
           "foreground": "#ffffff",
           "background": "#E74C3C"
         },
@@ -48,7 +48,7 @@
             "cache_duration": "none",
             "always_enabled": true
           },
-          "template": " \uf072 {{ .FormattedMs }} ",
+          "template": " \udb81\udcc5 {{ .FormattedMs }} ",
           "foreground": "#ffffff",
           "background": "#AC61CC"
         },
@@ -66,7 +66,7 @@
             "home_icon": "~",
             "style": "full"
           },
-          "template": " \uf07c {{ if eq .OS \"windows\" }}{{ .Path }}{{ else }}{{ replaceP \"\\\\$\" .Path \"\\\\$\" }}{{ end }} ",
+          "template": " \ue5fe {{ if eq .OS \"windows\" }}{{ .Path }}{{ else }}{{ replaceP \"\\\\$\" .Path \"\\\\$\" }}{{ end }} ",
           "foreground": "#ffffff",
           "background": "#0095e9"
         },
