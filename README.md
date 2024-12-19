@@ -53,7 +53,7 @@
 
 ## 安装字体
 1. 所有系统都必须安装新字体
-2. 访问链接 ```https://github.com/ryanoasis/nerd-fonts/releases/``` 下载 ```FiraCode.zip```
+2. 访问链接 ```https://github.com/ryanoasis/nerd-fonts/releases/``` 下载 ```FiraCode.tar.xz```
 3. 解压并双击 ```FiraCodeNerdFont-SemiBold.ttf``` 即可安装成功
 4. 下面的步骤根据自身情况部署
 
