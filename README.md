@@ -48,7 +48,7 @@
 ### 安装字体
 1. 所有系统都必须安装新字体
 2. 访问链接 ```https://github.com/ryanoasis/nerd-fonts/releases/``` 下载 ```FiraCode.zip```
-3. 解压并双击 ```Fira Code SemiBold Nerd Font Complete.ttf``` 即可安装成功
+3. 解压并双击 ```FiraCodeNerdFont-SemiBold.ttf``` 即可安装成功
 4. 下面的步骤根据自身情况部署
 
 ### Windows + Powershell
@@ -72,9 +72,9 @@
 
 ### MacOS + MacOS Terminal
 1. 从 ```https://github.com/JanDeDobbeleer/oh-my-posh/releases``` 下载 ```posh-darwin-amd64``` 和 ```themes.zip```
-2. 把主程序 ```posh-darwin-amd64``` 改名为 ```oh-my-posh``` 并保存在目录 ```/usr/local/bin/```，或者通过brew安装 ```brew install oh-my-posh```
-3. 把官方主题文件 ```themes.zip``` 解压在目录 ```/usr/local/opt/oh-my-posh/themes/```
-4. 把本项目中的主题文件 ```xposh.omp.json``` 和 ```xposh.minimal.omp.json``` 保存在目录 ```/usr/local/opt/oh-my-posh/themes/```
+2. 把主程序 ```posh-darwin-amd64``` 改名为 ```oh-my-posh``` 并保存在目录 ```~/tool/oh-my-posh/```，或者通过brew安装 ```brew install oh-my-posh```
+3. 把官方主题文件 ```themes.zip``` 解压在目录 ```~/tool/oh-my-posh/themes/```
+4. 把本项目中的主题文件 ```xposh.omp.json``` 和 ```xposh.minimal.omp.json``` 保存在目录 ```~/tool/oh-my-posh/themes/```
 5. 复制 ```.bashrc``` 里的内容
 6. 打开 ```MacOS Terminal``` 窗口
 7. 如果当前命令处理器是bash则执行bash命令 ```vi ~/.bash_profile```，如果当前命令处理器是zsh则执行zsh命令 ```vi ~/.zshrc```，在弹出的编辑器中的最底下粘贴刚刚复制的内容，保存，关闭编辑器
@@ -82,7 +82,7 @@
 
 ### MacOS + iTerm
 1. 先完成上述 ```MacOS + MacOS Terminal``` 步骤
-2. 打开 ```iTerm```，点击顶部iTerm2，Preferences
+2. 打开 ```iTerm```，点击顶部iTerm2，Settings
 3. Profiles，Text，Font，选择 ```FiraCode Nerd Font```
 4. 关闭 ```iTerm``` 窗口，新建 ```iTerm``` 窗口，即可生效
 
