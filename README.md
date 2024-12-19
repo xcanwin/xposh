@@ -53,13 +53,13 @@
 
 ### Windows + Powershell
 1. 从 ```https://github.com/JanDeDobbeleer/oh-my-posh/releases``` 下载 ```posh-windows-amd64.exe``` 和 ```themes.zip```
-2. 把主程序 ```posh-windows-amd64.exe``` 改名为 ```oh-my-posh.exe``` 并保存在目录 ```C:\oh-my-posh\```
-3. 把官方主题文件 ```themes.zip``` 解压在目录 ```C:\oh-my-posh\themes\```
-4. 把本项目中的主题文件 ```xposh.omp.json``` 和 ```xposh.minimal.omp.json``` 保存在目录 ```C:\oh-my-posh\themes\```
+2. 把主程序 ```posh-windows-amd64.exe``` 改名为 ```oh-my-posh.exe``` 并保存在目录 ```C:\tool\oh-my-posh\```
+3. 把官方主题文件 ```themes.zip``` 解压在目录 ```C:\tool\oh-my-posh\themes\```
+4. 把本项目中的主题文件 ```xposh.omp.json``` 和 ```xposh.minimal.omp.json``` 保存在目录 ```C:\tool\oh-my-posh\themes\```
 5. 复制 ```Microsoft.PowerShell_profile.ps1``` 里的内容
 6. 以管理员权限打开 ```powershell``` 窗口
-7. 执行powershell命令 ```notepad $PROFILE```，在弹出的编辑器中的最底下粘贴刚刚复制的内容，保存，关闭编辑器
-8. 执行powershell命令 ```[Environment]::SetEnvironmentVariable('POSH_PATH', 'C:\oh-my-posh\' , 'Machine')```
+7. 执行powershell命令 ```[Environment]::SetEnvironmentVariable('POSH_PATH', 'C:\tool\oh-my-posh\' , 'Machine')```
+8. 执行powershell命令 ```notepad $PROFILE```，在弹出的编辑器中的最底下粘贴刚刚复制的内容，保存，关闭编辑器
 9. 关闭```powershell``` 窗口，新建 ```powershell``` 窗口，即可生效
 
 ### Windows + Windows Terminal
