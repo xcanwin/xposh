@@ -4,7 +4,8 @@
 
 ## 项目简介
 
-- 兼容万物的oh-my-posh主题
+- 终端美化神器，精美的控制台oh-my-posh配色方案
+- 兼容Windows、Linux、MacOS、Terminal、Powershell、CMD、MSYS、wsl、iTerm、Termius、VS Code、GNOME、bash、zsh等
 
 <br>
 
