@@ -46,11 +46,16 @@
 
 ## 安装方法
 
-### 安装字体
+1. 安装字体
+2. 安装oh-my-posh 与 安装主题
+
+## 安装字体
 1. 所有系统都必须安装新字体
 2. 访问链接 ```https://github.com/ryanoasis/nerd-fonts/releases/``` 下载 ```FiraCode.zip```
 3. 解压并双击 ```FiraCodeNerdFont-SemiBold.ttf``` 即可安装成功
 4. 下面的步骤根据自身情况部署
+
+## 安装oh-my-posh 与 安装主题
 
 ### Windows + Powershell
 1. 从 ```https://github.com/JanDeDobbeleer/oh-my-posh/releases``` 下载 ```posh-windows-amd64.exe``` 和 ```themes.zip```
