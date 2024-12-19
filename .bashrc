@@ -39,7 +39,7 @@ if [[ -x "$(command -v cygpath)" ]]; then
 	export PATH=$PATH:${POSH_PATH}/bin
 fi
 if ! [[ -x "${POSH_PATH}" ]]; then
-	POSH_PATH=/usr/local/opt/oh-my-posh
+	POSH_PATH=~/tool/oh-my-posh
 fi
 export ShellName=$(basename $SHELL)
 eval "$(\
@@ -47,3 +47,4 @@ eval "$(\
     sed 's/-v MC_SID/"$MC_SID" != ""/g' |\
     sed '/oh-my-posh print primary --config/s/)"$/        |sed '"'"'s\/\$(\/\\\\\\\$(\/g'"'"'        )"/g'
 )"
+
