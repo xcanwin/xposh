@@ -13,7 +13,7 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": "{{ if matchP \"bash|zsh\" .Shell }} {{ .Icon }} {{ .UserName }}@{{ .HostName }} {{ end }}",
+          "template": " {{ .Icon }} {{ if matchP \"bash|zsh\" .Shell }}{{ .UserName }}@{{ .HostName }} {{ end }}",
           "foreground": "#ffffff",
           "background": "#D99B0E"
         },
