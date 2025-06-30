@@ -25,7 +25,9 @@ function Get-Current-Terminal{
 $current_terminal = Get-Current-Terminal;
 $xposh_terms = "Windows Terminal", "VS Code";
 if ($xposh_terms -notcontains $current_terminal) {
-    $xposh_min=".minimal";
+    $xposh_min = ".minimal";
 }
-$env:ShellName=(Get-Process -pid $pid).Name
-& "${env:POSH_PATH}\oh-my-posh" init pwsh --config "${env:POSH_PATH}\themes\xposh${xposh_min}.omp.json" | iex;
+$env:ShellName = (Get-Process -pid $pid).Name;
+$env:HiddenUserHost = 0;
+$POSH_PATH = "$env:LOCALAPPDATA\Programs\oh-my-posh";
+& "${POSH_PATH}\bin\oh-my-posh.exe" init pwsh --config "${POSH_PATH}\themes\xposh${xposh_min}.omp.json" | iex;

@@ -13,12 +13,23 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": " {{ .Icon }} {{ if matchP \"bash|zsh\" .Shell }}{{ .UserName }}@{{ .HostName }} {{ end }}",
+          "template": " {{ .Icon }} ",
           "foreground": "#ffffff",
-          "background": "#D99B0E"
+          "background": "#e5830c"
         },
         {
           "type": "session",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "properties": {
+            "cache_duration": "none"
+          },
+          "template": " {{ if or (.SSHSession) (ne .Env.HiddenUserHost \"1\") }}\ueba9 {{ .UserName }}@{{ .HostName }}{{ end }} ",
+          "foreground": "#3f3f3f",
+          "background": "#d7be00"
+        },
+        {
+          "type": "text",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
           "properties": {
@@ -93,7 +104,7 @@
           }
         },
         {
-          "type": "exit",
+          "type": "text",
           "style": "powerline",
           "powerline_symbol": "\ue0b0",
           "properties": {

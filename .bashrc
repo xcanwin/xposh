@@ -35,16 +35,20 @@ if ! [[ "$xposh_terms" =~ "$current_terminal" ]]; then
 	xposh_min=".minimal"
 fi
 if [[ -x "$(command -v cygpath)" ]]; then
+	POSH_PATH="$LOCALAPPDATA\Programs\oh-my-posh"
 	POSH_PATH=$(cygpath ${POSH_PATH})
 	export PATH=$PATH:${POSH_PATH}/bin
 fi
 if ! [[ -x "${POSH_PATH}" ]]; then
 	POSH_PATH=~/tool/oh-my-posh
+	export PATH=$PATH:${POSH_PATH}/bin
 fi
 export ShellName=$(basename $SHELL)
+export HiddenUserHost=0
 eval "$(\
-    oh-my-posh init "${ShellName}" --config "${POSH_PATH}/themes/xposh${xposh_min}.omp.json" |\
-    sed 's/-v MC_SID/"$MC_SID" != ""/g' |\
-    sed '/oh-my-posh print primary --config/s/)"$/        |sed '"'"'s\/\$(\/\\\\\\\$(\/g'"'"'        )"/g'
+    oh-my-posh init "${ShellName}" --config "${POSH_PATH}/themes/xposh${xposh_min}.omp.json"
+	# |\
+    #sed 's/-v MC_SID/"$MC_SID" != ""/g' |\
+    #sed '/oh-my-posh print primary --config/s/)"$/        |sed '"'"'s\/\$(\/\\\\\\\$(\/g'"'"'        )"/g'
 )"
 
