@@ -24,8 +24,8 @@
           "properties": {
             "cache_duration": "none"
           },
-          "template": " {{ if or (.SSHSession) (ne .Env.HiddenUserHost \"1\") }}\ueba9 {{ .UserName }}@{{ .HostName }}{{ end }} ",
-          "foreground": "#3f3f3f",
+          "template": " {{ if or (.SSHSession) (ne .Env.HiddenUserHost \"1\") }}\ueb79 {{ .UserName }}@{{ .HostName }}{{ end }} ",
+          "foreground": "#2c2c2c",
           "background": "#d7be00"
         },
         {
