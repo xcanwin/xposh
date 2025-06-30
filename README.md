@@ -122,3 +122,9 @@ wget -O $POSH_PATH/themes/xposh.minimal.omp.json https://github.com/xcanwin/xpos
 1. 打开 ```VS Code```，设置
 2. 搜索 ```terminal.integrated.fontFamily```
 3. 粘贴 ```FiraCode Nerd Font```，回车，即可生效
+
+## 特殊配置
+
+### 隐藏当前用户名和计算机名
+1. 将变量 HiddenUserHost 改为 1
+2. 但是为了系统安全，在ssh远程连接服务器时，不允许隐藏用户名和计算机名
