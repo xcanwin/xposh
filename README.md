@@ -96,7 +96,7 @@ notepad "$PROFILE";
 
 1. 执行以下命令
 ```
-bash -c "`curl -fsSL https://github.com/xcanwin/xposh/raw/main/xposh.install.sh`"
+bash -c "`curl -fsSL https://github.com/xcanwin/xposh/raw/main/bin/xposh.install.sh`"
 ```
 
 ### MacOS + MacOS Terminal
