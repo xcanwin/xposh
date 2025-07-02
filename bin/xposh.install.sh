@@ -38,8 +38,8 @@ config() {
     start='# >>> xposh init >>>'
     end='# <<< xposh init <<<'
     block="$start
-    . $POSH_PATH/bin/xposh.bashrc.sh
-    $end"
+. $POSH_PATH/bin/xposh.bashrc.sh
+$end"
     rcs=(~/.bashrc ~/.zshrc)
     for rc in "${rcs[@]}"; do
     [ -f "$rc" ] || continue
