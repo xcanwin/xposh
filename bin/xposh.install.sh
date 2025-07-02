@@ -22,14 +22,14 @@ get_goarch() {
 download_omp() {
     GOOS=$(get_goos)
     GOARCH=$(get_goarch)
-    omp_url=$(proxychains4 curl -fsSL https://api.github.com/repos/JanDeDobbeleer/oh-my-posh/releases/latest | grep browser_download_url | grep posh-$GOOS-$GOARCH | cut -d '"' -f 4)
-    proxychains4 wget -O $POSH_PATH/bin/oh-my-posh "$omp_url"
+    omp_url=$(curl -fsSL https://api.github.com/repos/JanDeDobbeleer/oh-my-posh/releases/latest | grep browser_download_url | grep posh-$GOOS-$GOARCH | cut -d '"' -f 4)
+    wget -O $POSH_PATH/bin/oh-my-posh "$omp_url"
     chmod +x $POSH_PATH/bin/oh-my-posh
 }
 
 download_xposh() {
     rm -rf /tmp/xposh*
-    proxychains4 wget -O /tmp/xposh.zip https://codeload.github.com/xcanwin/xposh/zip/refs/heads/main
+    wget -O /tmp/xposh.zip https://codeload.github.com/xcanwin/xposh/zip/refs/heads/main
     unzip /tmp/xposh.zip -d /tmp/
     cp -r /tmp/xposh-*/{bin,themes} $POSH_PATH
 }
