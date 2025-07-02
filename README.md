@@ -69,13 +69,13 @@
 Set-ExecutionPolicy Bypass -Scope Process -Force;
 Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'));
 ```
-2. 执行以下命令，手动把本项目中的主题文件 ```xposh.omp.json``` 和 ```xposh.minimal.omp.json``` 保存到弹出的目录中
+2. 手动复制本项目中的主题文件 ```xposh.omp.json``` 和 ```xposh.minimal.omp.json```，执行以下命令，保存到弹出的目录中
 ```
 $POSH_PATH = "$env:LOCALAPPDATA\Programs\oh-my-posh";
 ni -it Directory "${POSH_PATH}\themes\" -f;
 explorer "${POSH_PATH}\themes\";
 ```
-3. 执行以下命令，手动把本项目中的配置文件 ```xposh.Microsoft.PowerShell_profile.ps1``` 保存到弹出的编辑器中，保存
+3. 手动复制本项目中的配置文件 ```xposh.powershell.ps1``` 的内容，执行以下命令，粘贴到弹出的编辑器中，保存
 ```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser;
 ni -it Directory (Split-Path $PROFILE) -f;
