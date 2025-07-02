@@ -15,7 +15,7 @@
           },
           "template": "\u250c ",
           "foreground": "#ffffff",
-          "background": "#e5830c"
+          "background": "#d7be00"
         },
         {
           "type": "session",
@@ -25,8 +25,8 @@
             "cache_duration": "none"
           },
           "template": " {{ if or (.SSHSession) (ne .Env.HiddenUserHost \"1\") }}{{ .UserName }}@{{ .HostName }}{{ end }} ",
-          "foreground": "#2c2c2c",
-          "background": "#d7be00"
+          "foreground": "#ededed",
+          "background": "#e5830c"
         },
         {
           "type": "text",
@@ -36,7 +36,7 @@
             "cache_duration": "none"
           },
           "template": " {{ if .Env.ShellName }}{{ .Env.ShellName }}{{ else }}{{ .Shell }}{{ end }} ",
-          "foreground": "#ffffff",
+          "foreground": "#ededed",
           "background": "#E74C3C"
         },
         {
@@ -44,7 +44,7 @@
           "style": "powerline",
           "powerline_symbol": "",
           "template": " {{ if .Error }}{{ .Error }}{{ else }}{{ if .Venv }}{{ .Venv }} {{ end }}{{ .Full }}{{ end }} ",
-          "foreground": "#ffffff",
+          "foreground": "#ededed",
           "background": "#00c6c6",
           "properties": {
             "cache_duration": "none",
@@ -60,7 +60,7 @@
             "always_enabled": true
           },
           "template": " {{ .FormattedMs }} ",
-          "foreground": "#ffffff",
+          "foreground": "#ededed",
           "background": "#AC61CC"
         },
         {
