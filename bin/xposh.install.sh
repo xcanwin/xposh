@@ -22,16 +22,16 @@ get_goarch() {
 download_omp() {
     GOOS=$(get_goos)
     GOARCH=$(get_goarch)
-    omp_url=$(curl -fsSL https://api.github.com/repos/JanDeDobbeleer/oh-my-posh/releases/latest | grep browser_download_url | grep posh-$GOOS-$GOARCH | cut -d '"' -f 4)
-    wget -O $POSH_PATH/bin/oh-my-posh "$omp_url"
+    omp_url=$(proxychains4 curl -fsSL https://api.github.com/repos/JanDeDobbeleer/oh-my-posh/releases/latest | grep browser_download_url | grep posh-$GOOS-$GOARCH | cut -d '"' -f 4)
+    proxychains4 wget -O $POSH_PATH/bin/oh-my-posh "$omp_url"
     chmod +x $POSH_PATH/bin/oh-my-posh
 }
 
 download_xposh() {
     rm -rf /tmp/xposh*
-    wget -O /tmp/xposh.zip https://codeload.github.com/xcanwin/xposh/zip/refs/heads/main
+    proxychains4 wget -O /tmp/xposh.zip https://codeload.github.com/xcanwin/xposh/zip/refs/heads/main
     unzip /tmp/xposh.zip -d /tmp/
-    cp -r /tmp/xposh-*/* $POSH_PATH
+    cp -r /tmp/xposh-*/{bin,themes} $POSH_PATH
 }
 
 config() {
@@ -44,7 +44,7 @@ $end"
     for rc in "${rcs[@]}"; do
     [ -f "$rc" ] || continue
     sed -i.bak "/$start/,/$end/d" "$rc"
-    echo -e "\n$block" >> "$rc"
+    printf "\n$block\n" >> "$rc"
     done
 }
 
@@ -52,4 +52,4 @@ mkdir -p $POSH_PATH/{bin,themes}
 download_omp
 download_xposh
 config
-echo -e "\n[+] OK"
+printf "\n[+] OK\n"
