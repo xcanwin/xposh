@@ -19,18 +19,19 @@ get_goarch() {
     esac
 }
 
+download_xposh() {
+    mkdir -p $POSH_PATH/{bin,themes}
+    rm -rf /tmp/xposh*
+    wget -O /tmp/xposh.zip https://codeload.github.com/xcanwin/xposh/zip/refs/heads/main
+    unzip /tmp/xposh.zip -d /tmp/
+    cp -r /tmp/xposh-*/* $POSH_PATH
+}
+
 download_omp() {
     GOOS=$(get_goos)
     GOARCH=$(get_goarch)
     wget -O $POSH_PATH/bin/oh-my-posh "$(curl -s https://api.github.com/repos/JanDeDobbeleer/oh-my-posh/releases/latest | grep browser_download_url | grep posh-$GOOS-$GOARCH | cut -d '"' -f 4)"
     chmod +x $POSH_PATH/bin/oh-my-posh
-}
-
-download_xposh() {
-    rm -rf /tmp/xposh*
-    wget -O /tmp/xposh.zip https://codeload.github.com/xcanwin/xposh/zip/refs/heads/main
-    unzip /tmp/xposh.zip -d /tmp/
-    cp -r /tmp/xposh-*/ $POSH_PATH
 }
 
 config() {
@@ -47,7 +48,7 @@ config() {
     done
 }
 
-mkdir -p $POSH_PATH/{bin,themes}
 download_omp
 download_xposh
 config
+echo -e "\n[+] OK"
