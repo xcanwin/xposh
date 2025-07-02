@@ -47,7 +47,7 @@
 ## 安装方法
 
 1. 安装字体
-2. 安装oh-my-posh 与 安装主题
+2. 安装xposh
 
 <br>
 
@@ -60,7 +60,29 @@
 
 <br>
 
-## 安装oh-my-posh 与 安装主题
+## 安装xposh
+
+### Linux
+
+1. 执行以下命令
+```
+bash -c "`curl -fsSL https://github.com/xcanwin/xposh/raw/main/bin/xposh.install.sh`"
+```
+
+### MacOS + MacOS Terminal
+
+1. 完成上述 ```Linux``` 步骤
+2. 通过 brew 安装
+```
+brew install oh-my-posh
+```
+3. 新建 ```MacOS Terminal``` 窗口，即可生效
+
+### MacOS + iTerm
+
+1. 完成上述 ```MacOS + MacOS Terminal``` 步骤
+2. 打开 ```iTerm```，点击 顶部iTerm，Settings，Profiles，Text，Font，选择 ```FiraCode Nerd Font```
+3. 新建 ```iTerm``` 窗口，即可生效
 
 ### Windows + Powershell
 
@@ -93,33 +115,12 @@ notepad "$PROFILE";
 5. 配置文件，```Powershell```，命令行，若存在参数 ```-noprofile``` 则删掉，保存
 6. 关闭 ```Windows Terminal``` 窗口，新建 ```Windows Terminal``` 窗口，即可生效
 
-### Linux
-
-1. 执行以下命令
-```
-bash -c "`curl -fsSL https://github.com/xcanwin/xposh/raw/main/bin/xposh.install.sh`"
-```
-
-### MacOS + MacOS Terminal
-
-1. 完成上述 ```Linux``` 步骤
-2. 通过 brew 安装
-```
-brew install oh-my-posh
-```
-3. 新建 ```MacOS Terminal``` 窗口，即可生效
-
-### MacOS + iTerm
-
-1. 完成上述 ```MacOS + MacOS Terminal``` 步骤
-2. 打开 ```iTerm```，点击 顶部iTerm，Settings，Profiles，Text，Font，选择 ```FiraCode Nerd Font```
-3. 新建 ```iTerm``` 窗口，即可生效
-
 ### VS Code
 
-1. 打开 ```VS Code```，点击 顶部Code，首选项，设置
-2. 搜索 ```terminal.integrated.fontFamily```，粘贴 ```FiraCode Nerd Font```，回车
-3. 新建 ```VS Code``` 窗口，即可生效
+1. 完成上述 ```MacOS```、```Windows```、```Linux``` 步骤
+2. 打开 ```VS Code```，点击 顶部Code，首选项，设置
+3. 搜索 ```terminal.integrated.fontFamily```，粘贴 ```FiraCode Nerd Font```，回车
+4. 新建 ```VS Code``` 窗口，即可生效
 
 ## 特殊配置
 
