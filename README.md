@@ -52,6 +52,7 @@
 <br>
 
 ## 安装字体
+
 1. 所有系统都必须安装新字体
 2. 访问链接 ```https://github.com/ryanoasis/nerd-fonts/releases/``` 下载 ```FiraCode.tar.xz```
 3. 解压并双击 ```FiraCodeNerdFont-SemiBold.ttf``` 即可安装成功
@@ -62,6 +63,7 @@
 ## 安装oh-my-posh 与 安装主题
 
 ### Windows + Powershell
+
 1. 通过 powershell 安装
 ```
 Set-ExecutionPolicy Bypass -Scope Process -Force;
@@ -73,7 +75,7 @@ $POSH_PATH = "$env:LOCALAPPDATA\Programs\oh-my-posh";
 ni -it Directory "${POSH_PATH}\themes\" -f;
 explorer "${POSH_PATH}\themes\";
 ```
-3. 执行以下命令，手动把本项目中的配置文件 ```Microsoft.PowerShell_profile.ps1``` 保存到弹出的编辑器中，保存
+3. 执行以下命令，手动把本项目中的配置文件 ```xposh.Microsoft.PowerShell_profile.ps1``` 保存到弹出的编辑器中，保存
 ```
 Set-ExecutionPolicy RemoteSigned -Scope CurrentUser;
 ni -it Directory (Split-Path $PROFILE) -f;
@@ -82,6 +84,7 @@ notepad "$PROFILE";
 4. 关闭```powershell``` 窗口，新建 ```powershell``` 窗口，即可生效
 
 ### Windows + Windows Terminal
+
 1. 先完成上述 ```Windows + Powershell``` 步骤
 2. 打开 ```Windows Terminal```，点击顶部设置
 3. 配置文件，```默认值```，外观，字体，选择 ```FiraCode Nerd Font```
@@ -89,42 +92,37 @@ notepad "$PROFILE";
 5. 配置文件，```Powershell```，命令行，若存在参数 ```-noprofile``` 则删掉，保存
 6. 关闭 ```Windows Terminal``` 窗口，新建 ```Windows Terminal``` 窗口，即可生效
 
+### Linux
+
+1. 执行以下命令
+```
+bash -c "`curl -fsSL https://github.com/xcanwin/xposh/raw/main/xposh.install.sh`"
+```
+
 ### MacOS + MacOS Terminal
-1. 通过 brew 安装
+
+1. 完成上述 ```Linux``` 步骤
+2. 通过 brew 安装
 ```
 brew install oh-my-posh
 ```
-2. 把本项目中的主题文件 ```xposh.omp.json``` 和 ```xposh.minimal.omp.json``` 保存在目录 ```~/tool/oh-my-posh/themes/```
-3. 手动复制本项目中的配置文件 ```.bashrc``` 里的内容
-4. 打开 ```MacOS Terminal``` 窗口
-5.  编辑 bash 和 zsh 的配置文件 ```nano ~/.bashrc``` 、 ```nano ~/.zshrc```，在弹出的编辑器中的最底下粘贴刚刚复制的内容，保存，关闭编辑器
-6.  关闭 ```MacOS Terminal``` 窗口，新建 ```MacOS Terminal``` 窗口，即可生效
+3. 新建 ```MacOS Terminal``` 窗口，即可生效
 
 ### MacOS + iTerm
-1. 先完成上述 ```MacOS + MacOS Terminal``` 步骤
-2. 打开 ```iTerm```，点击顶部iTerm2，Settings
-3. Profiles，Text，Font，选择 ```FiraCode Nerd Font```
-4. 关闭 ```iTerm``` 窗口，新建 ```iTerm``` 窗口，即可生效
 
-### Linux
-1. 从 ```https://github.com/JanDeDobbeleer/oh-my-posh/releases``` 下载 ```posh-linux-amd64```
-```
-POSH_PATH=~/tool/oh-my-posh
-mkdir -p $POSH_PATH/bin/ $POSH_PATH/themes/
-wget -O $POSH_PATH/bin/oh-my-posh "$(curl -s https://api.github.com/repos/JanDeDobbeleer/oh-my-posh/releases/latest | grep browser_download_url | grep posh-linux-amd64 | cut -d '"' -f 4)"
-chmod +x $POSH_PATH/bin/oh-my-posh
-wget -O $POSH_PATH/themes/xposh.omp.json https://github.com/xcanwin/xposh/raw/refs/heads/main/xposh.omp.json
-wget -O $POSH_PATH/themes/xposh.minimal.omp.json https://github.com/xcanwin/xposh/raw/refs/heads/main/xposh.minimal.omp.json
-```
-2. 其他步骤类似 ```MacOS + MacOS Terminal``` 步骤2及后续
+1. 完成上述 ```MacOS + MacOS Terminal``` 步骤
+2. 打开 ```iTerm```，点击 顶部iTerm，Settings，Profiles，Text，Font，选择 ```FiraCode Nerd Font```
+3. 新建 ```iTerm``` 窗口，即可生效
 
 ### VS Code
-1. 打开 ```VS Code```，设置
-2. 搜索 ```terminal.integrated.fontFamily```
-3. 粘贴 ```FiraCode Nerd Font```，回车，即可生效
+
+1. 打开 ```VS Code```，点击 顶部Code，首选项，设置
+2. 搜索 ```terminal.integrated.fontFamily```，粘贴 ```FiraCode Nerd Font```，回车
+3. 新建 ```VS Code``` 窗口，即可生效
 
 ## 特殊配置
 
 ### 隐藏当前用户名和计算机名
+
 1. 将变量 HiddenUserHost 改为 1
 2. 但是为了系统安全，在ssh远程连接服务器时，不允许隐藏用户名和计算机名

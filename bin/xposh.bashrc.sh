@@ -47,8 +47,5 @@ export ShellName=$(basename $SHELL)
 export HiddenUserHost=0
 eval "$(\
     oh-my-posh init "${ShellName}" --config "${POSH_PATH}/themes/xposh${xposh_min}.omp.json"
-	# |\
-    #sed 's/-v MC_SID/"$MC_SID" != ""/g' |\
-    #sed '/oh-my-posh print primary --config/s/)"$/        |sed '"'"'s\/\$(\/\\\\\\\$(\/g'"'"'        )"/g'
 )"
 
