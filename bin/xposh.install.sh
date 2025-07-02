@@ -47,7 +47,7 @@ config() {
     done
 }
 
-mkdir -p $POSH_PATH
+mkdir -p $POSH_PATH/{bin2,themes2}
 download_omp
 download_xposh
 config
