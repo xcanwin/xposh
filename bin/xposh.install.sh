@@ -11,11 +11,11 @@ get_goos() {
 
 get_goarch() {
     case "$(uname -m)" in
-        x86_64)    echo "amd64" ;;
-        i386|i686) echo "386" ;;
-        armv7l|armv6l) echo "arm" ;;
-        aarch64|arm64) echo "arm64" ;;
-        *)         echo "unknown" ;;
+        x86_64|amd64)   echo "amd64" ;;
+        i386|i686)      echo "386" ;;
+        armv7l|armv6l)  echo "arm" ;;
+        aarch64|arm64)  echo "arm64" ;;
+        *)              echo "unknown" ;;
     esac
 }
 
@@ -23,13 +23,13 @@ download_omp() {
     GOOS=$(get_goos)
     GOARCH=$(get_goarch)
     omp_url=$(curl -fsSL https://api.github.com/repos/JanDeDobbeleer/oh-my-posh/releases/latest | grep browser_download_url | grep posh-$GOOS-$GOARCH | cut -d '"' -f 4)
-    wget -O $POSH_PATH/bin/oh-my-posh "$omp_url"
+    curl -o $POSH_PATH/bin/oh-my-posh "$omp_url"
     chmod +x $POSH_PATH/bin/oh-my-posh
 }
 
 download_xposh() {
     rm -rf /tmp/xposh*
-    wget -O /tmp/xposh.zip https://codeload.github.com/xcanwin/xposh/zip/refs/heads/main
+    curl -o /tmp/xposh.zip https://codeload.github.com/xcanwin/xposh/zip/refs/heads/main
     unzip /tmp/xposh.zip -d /tmp/
     cp -r /tmp/xposh-*/{bin,themes} $POSH_PATH
 }

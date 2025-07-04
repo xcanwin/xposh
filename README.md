@@ -108,7 +108,7 @@ notepad "$PROFILE";
 
 ### Windows + Windows Terminal
 
-1. 先完成上述 ```Windows + Powershell``` 步骤
+1. 完成上述 ```Windows + Powershell``` 步骤
 2. 打开 ```Windows Terminal```，点击顶部设置
 3. 配置文件，```默认值```，外观，字体，选择 ```FiraCode Nerd Font```
 4. 配置文件，```Powershell```，外观，字体，选择 ```FiraCode Nerd Font```
