@@ -67,6 +67,10 @@
 ```
 bash -c "`curl -L -fsS https://github.com/xcanwin/xposh/raw/main/bin/xposh.install.sh`"
 ```
+2. 若使用 ```proxychains4``` 代理，则执行
+```
+proxychains4 bash -c "`proxychains4 curl -L -fsS https://github.com/xcanwin/xposh/raw/main/bin/xposh.install.sh`"
+```
 
 ### MacOS + MacOS Terminal
 
@@ -120,6 +124,14 @@ notepad "$PROFILE";
 2. 打开 ```VS Code```，点击 顶部Code，首选项，设置
 3. 搜索 ```terminal.integrated.fontFamily```，粘贴 ```FiraCode Nerd Font```，回车
 4. 新建 ```VS Code``` 窗口，即可生效
+
+### LinuxMint + GNOME
+
+1. 完成上述 ```Linux``` 步骤
+2. 执行以下命令
+```
+gsettings set "org.gnome.desktop.interface" monospace-font-name 'FiraCode Nerd Font Semi-Bold 10'
+```
 
 ## 特殊配置
 
