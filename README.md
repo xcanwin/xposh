@@ -125,14 +125,6 @@ notepad "$PROFILE";
 3. 搜索 ```terminal.integrated.fontFamily```，粘贴 ```FiraCode Nerd Font```，回车
 4. 新建 ```VS Code``` 窗口，即可生效
 
-### LinuxMint + GNOME
-
-1. 完成上述 ```Linux``` 步骤
-2. 执行以下命令
-```
-gsettings set "org.gnome.desktop.interface" monospace-font-name 'FiraCode Nerd Font Semi-Bold 10'
-```
-
 ## 特殊配置
 
 ### 隐藏当前用户名和计算机名
