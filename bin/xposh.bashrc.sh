@@ -34,6 +34,9 @@ xposh_terms="Windows Terminal, VS Code, iTerm, Termius"
 if ! [[ "$xposh_terms" =~ "$current_terminal" ]]; then
 	xposh_min=".minimal"
 fi
+if [ "$TERM" = "xterm-256color" ] && [ "$COLORTERM" = "truecolor" ]; then
+	xposh_min=""
+fi
 if [[ -x "$(command -v cygpath)" ]]; then
 	POSH_PATH="$LOCALAPPDATA\Programs\oh-my-posh"
 	POSH_PATH=$(cygpath ${POSH_PATH})

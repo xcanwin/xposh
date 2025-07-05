@@ -56,7 +56,17 @@
 1. 所有系统都必须安装新字体
 2. 访问链接 ```https://github.com/ryanoasis/nerd-fonts/releases/``` 下载 ```FiraCode.tar.xz```
 3. 解压并双击 ```FiraCodeNerdFont-SemiBold.ttf``` 即可安装成功
-4. 下面的步骤根据自身情况部署
+4. 若部分 ```Linux``` 双击失败，则这样安装：
+```
+TARBALL=/tmp/FiraCode.tar.xz
+TMPDIR=/tmp/nerd-fonts-firacode
+INSTALL_DIR=~/.local/share/fonts
+curl -L -o "$TARBALL" https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.tar.xz
+mkdir -p "$TMPDIR" "$INSTALL_DIR"
+tar -xf "$TARBALL" -C "$TMPDIR"
+cp "$TMPDIR/FiraCodeNerdFont-SemiBold.ttf" "$INSTALL_DIR"
+fc-cache -fv
+```
 
 <br>
 
@@ -66,7 +76,7 @@
 
 1. 执行以下命令
 ```
-bash -c "`curl -fsSL https://github.com/xcanwin/xposh/raw/main/bin/xposh.install.sh`"
+bash -c "`curl -L -fsS https://github.com/xcanwin/xposh/raw/main/bin/xposh.install.sh`"
 ```
 
 ### MacOS + MacOS Terminal
